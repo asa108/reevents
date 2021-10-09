@@ -7,12 +7,28 @@ import { Container } from "semantic-ui-react";
 
 function App() {
   const [formOpen, setFormOpen] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
+
+  function handleSelectedEvent(event) {
+    setSelectedEvent(event);
+    setFormOpen(true);
+  }
+
+  function handleCreateFormOpen() {
+    setSelectedEvent(null);
+    setFormOpen(true);
+  }
 
   return (
     <>
-      <NavBar setFormOpen={setFormOpen} />
+      <NavBar setFormOpen={handleCreateFormOpen} />
       <Container className="main">
-        <EventsDashbord formOpen={formOpen} setFormOpen={setFormOpen} />
+        <EventsDashbord
+          formOpen={formOpen}
+          setFormOpen={setFormOpen}
+          selectEvent={handleSelectedEvent}
+          selectedEvent={selectedEvent}
+        />
       </Container>
     </>
   );
