@@ -1,10 +1,10 @@
 import React from "react";
 import { Menu, Button } from "semantic-ui-react";
 
-export default function SignedOutMenu() {
+export default function SignedOutMenu({ setAuth }) {
   return (
     <Menu.Item position="right">
-      <Button basic inverted content="Login" />
+      <Button onClick={() => setAuth(true)} basic inverted content="Login" />
       <Button
         basic
         inverted

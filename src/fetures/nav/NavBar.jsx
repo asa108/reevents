@@ -28,7 +28,11 @@ export default function NavBar({ setFormOpen, formOpen }) {
             />
           </Menu.Item>
         )}
-        {auth ? <SignedInMenu /> : <SignedOutMenu />}
+        {auth ? (
+          <SignedInMenu setAuth={setAuth} />
+        ) : (
+          <SignedOutMenu setAuth={setAuth} />
+        )}
       </Container>
     </Menu>
   );
