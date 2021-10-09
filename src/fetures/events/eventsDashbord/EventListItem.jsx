@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Segment, Item, Icon, List, Button } from "semantic-ui-react";
 import EventListAttndee from "./EventListAttndee";
 
@@ -41,7 +42,8 @@ export default function EventListItem({ event, selectEvent, deleteEvent }) {
         />
 
         <Button
-          onClick={() => selectEvent(event)}
+          as={Link}
+          to={`/events/${event.id}`}
           color="teal"
           floated="right"
           content="View"
