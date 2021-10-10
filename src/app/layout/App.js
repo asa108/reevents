@@ -8,6 +8,7 @@ import { Route } from "react-router-dom";
 import HomePage from "../../fetures/home/HomePage";
 import EventDetailedPage from "../../fetures/events/eventDetaled/EventDetailedPage";
 import EventForm from "../../fetures/events/eventForm/EventForm";
+import Sandbox from "../../fetures/sandox/Sandbox";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <NavBar />
             <Container className="main">
               <Route exact path="/events" component={EventsDashbord} />
+              <Route exact path="/sandbox" component={Sandbox} />
               <Route path="/events/:id" component={EventDetailedPage} />
               <Route
                 path={["/createEvent", "/manage/:id"]}

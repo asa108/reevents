@@ -1,4 +1,4 @@
-export const sampleData = [
+const sampleData = [
   {
     id: "1",
     title: "Trip to Empire State building",
@@ -13,12 +13,12 @@ export const sampleData = [
     attendees: [
       {
         id: "a",
-        name: "Bob",
+        displayName: "Bob",
         photoURL: "https://randomuser.me/api/portraits/men/20.jpg",
       },
       {
         id: "b",
-        name: "Tom",
+        displayName: "Tom",
         photoURL: "https://randomuser.me/api/portraits/men/22.jpg",
       },
     ],
@@ -37,14 +37,16 @@ export const sampleData = [
     attendees: [
       {
         id: "a",
-        name: "Bob",
+        displayName: "Bob",
         photoURL: "https://randomuser.me/api/portraits/men/20.jpg",
       },
       {
         id: "b",
-        name: "Tom",
+        displayName: "Tom",
         photoURL: "https://randomuser.me/api/portraits/men/22.jpg",
       },
     ],
   },
 ];
+
+export default sampleData;
