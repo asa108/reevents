@@ -4,13 +4,15 @@ import "./style.css";
 import EventsDashbord from "../../fetures/events/eventsDashbord/EventsDashbord";
 import NavBar from "../../fetures/nav/NavBar";
 import { Container } from "semantic-ui-react";
-import { Route } from "react-router-dom";
+import { Route, useLocation } from "react-router-dom";
 import HomePage from "../../fetures/home/HomePage";
 import EventDetailedPage from "../../fetures/events/eventDetaled/EventDetailedPage";
 import EventForm from "../../fetures/events/eventForm/EventForm";
 import Sandbox from "../../fetures/sandox/Sandbox";
 
 function App() {
+  const { key } = useLocation();
+
   return (
     <>
       <Route exact path="/" component={HomePage} />
@@ -26,6 +28,7 @@ function App() {
               <Route
                 path={["/createEvent", "/manage/:id"]}
                 component={EventForm}
+                key={key}
               />
             </Container>
           </>

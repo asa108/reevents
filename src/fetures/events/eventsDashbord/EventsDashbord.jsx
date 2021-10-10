@@ -7,25 +7,10 @@ import EventList from "./EventList";
 export default function EventsDashbord() {
   const { events } = useSelector((state) => state.event);
 
-  // function handleCreateEvent(event) {
-  //   setEvents([...events, event]);
-  // }
-
-  // function handleUpdateEvent(updateEvent) {
-  //   setEvents(
-  //     events.map((evt) => (evt.id === updateEvent.id ? updateEvent : evt))
-  //   );
-  //   selectEvent(null);
-  // }
-
-  function handleDeletEvet(eventId) {
-    // setEvents(events.filter((evt) => evt.id !== eventId));
-  }
-
   return (
     <Grid>
       <Grid.Column width={10}>
-        <EventList events={events} deleteEvent={handleDeletEvet} />
+        <EventList events={events} />
       </Grid.Column>
 
       <Grid.Column width={6}>
