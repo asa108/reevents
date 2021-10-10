@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./style.css";
 import EventsDashbord from "../../fetures/events/eventsDashbord/EventsDashbord";
@@ -10,19 +10,6 @@ import EventDetailedPage from "../../fetures/events/eventDetaled/EventDetailedPa
 import EventForm from "../../fetures/events/eventForm/EventForm";
 
 function App() {
-  const [formOpen, setFormOpen] = useState(false);
-  const [selectedEvent, setSelectedEvent] = useState(null);
-
-  function handleSelectedEvent(event) {
-    setSelectedEvent(event);
-    setFormOpen(true);
-  }
-
-  function handleCreateFormOpen() {
-    setSelectedEvent(null);
-    setFormOpen(true);
-  }
-
   return (
     <>
       <Route exact path="/" component={HomePage} />
@@ -30,11 +17,14 @@ function App() {
         path={"/(.+)"}
         render={() => (
           <>
-            <NavBar setFormOpen={handleCreateFormOpen} />
+            <NavBar />
             <Container className="main">
               <Route exact path="/events" component={EventsDashbord} />
               <Route path="/events/:id" component={EventDetailedPage} />
-              <Route path="/createEvent" component={EventForm} />
+              <Route
+                path={["/createEvent", "/manage/:id"]}
+                component={EventForm}
+              />
             </Container>
           </>
         )}
