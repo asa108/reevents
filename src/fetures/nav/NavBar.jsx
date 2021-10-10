@@ -4,7 +4,7 @@ import { Container, Menu, Button } from "semantic-ui-react";
 import SignedInMenu from "./SignedInMenu";
 import SignedOutMenu from "./SignedOutMenu";
 
-export default function NavBar({ setFormOpen, formOpen }) {
+export default function NavBar({ setFormOpen }) {
   const history = useHistory();
 
   const [auth, setAuth] = useState(false);
