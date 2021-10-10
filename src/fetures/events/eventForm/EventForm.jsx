@@ -8,6 +8,8 @@ import * as Yup from "yup";
 import { Segment, Header, Button, FormField, Label } from "semantic-ui-react";
 import { Formik, Form, Field, Error, ErrorMessage } from "formik";
 import MyTextInput from "../../../app/common/form/MyTextInput";
+import MyTextArea from "../../../app/common/form/MyTextArea";
+
 export default function EventForm({ match, history }) {
   const dispatch = useDispatch();
 
@@ -58,11 +60,16 @@ export default function EventForm({ match, history }) {
             <Header color="teal" content="Event Details" />
             <MyTextInput name="title" placeholder="Event title" />
             <MyTextInput name="category" placeholder="Category" />
-            <MyTextInput name="description" placeholder="Description" />
-            <Header sub color="teal" content="Event Location details" />
+            <MyTextArea name="description" placeholder="Description" />
+            <Header
+              sub
+              color="teal"
+              content="Event Location details"
+              rows={3}
+            />
             <MyTextInput name="city" placeholder="City" />
             <MyTextInput name="venue" placeholder="Venue" />
-            <MyTextInput name="date" placeholder="Date" />
+            <MyTextInput type="date" name="date" placeholder="Date" />
 
             <Button type="submit" floated="right" positive content="Submit" />
             <Button
