@@ -6,11 +6,12 @@ import { Link } from "react-router-dom";
 import * as Yup from "yup";
 
 import { Segment, Header, Button, FormField, Label } from "semantic-ui-react";
-import { Formik, Form, Field, Error, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import MyTextInput from "../../../app/common/form/MyTextInput";
 import MyTextArea from "../../../app/common/form/MyTextArea";
 import MySelectInput from "../../../app/common/form/MySelectInput";
 import { categoryData } from "../../../app/api/categoryOptions";
+import MyDateInput from "../../../app/common/form/MyDateInput";
 
 export default function EventForm({ match, history }) {
   const dispatch = useDispatch();
@@ -75,7 +76,14 @@ export default function EventForm({ match, history }) {
             />
             <MyTextInput name="city" placeholder="City" />
             <MyTextInput name="venue" placeholder="Venue" />
-            <MyTextInput type="date" name="date" placeholder="Date" />
+            <MyDateInput
+              name="date"
+              placeholder="Date"
+              timeFormat="HH:mm"
+              showTimeSelect
+              timeCaption="time"
+              dateFormat="MMM d,yyyy h:mm a"
+            />
 
             <Button type="submit" floated="right" positive content="Submit" />
             <Button
