@@ -9,12 +9,14 @@ import HomePage from "../../fetures/home/HomePage";
 import EventDetailedPage from "../../fetures/events/eventDetaled/EventDetailedPage";
 import EventForm from "../../fetures/events/eventForm/EventForm";
 import Sandbox from "../../fetures/sandox/Sandbox";
+import ModalManager from "../common/modals/ModalManager";
 
 function App() {
   const { key } = useLocation();
 
   return (
     <>
+      <ModalManager />
       <Route exact path="/" component={HomePage} />
       <Route
         path={"/(.+)"}
