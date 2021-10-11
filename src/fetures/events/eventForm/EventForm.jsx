@@ -58,7 +58,7 @@ export default function EventForm({ match, history }) {
           history.push("/events");
         }}
       >
-        {({ values, handleChange, handleSubmit }) => (
+        {({ isSubmitting, dirty, isValid }) => (
           <Form className="ui form">
             <Header color="teal" content="Event Details" />
             <MyTextInput name="title" placeholder="Event title" />
@@ -85,8 +85,16 @@ export default function EventForm({ match, history }) {
               dateFormat="MMM d,yyyy h:mm a"
             />
 
-            <Button type="submit" floated="right" positive content="Submit" />
             <Button
+              laoding={isSubmitting}
+              disabled={!isValid || !dirty || isSubmitting}
+              type="submit"
+              floated="right"
+              positive
+              content="Submit"
+            />
+            <Button
+              disabled={isSubmitting}
               as={Link}
               to="/events"
               type="submit"
