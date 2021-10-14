@@ -10,6 +10,7 @@ import EventDetailedPage from "../../fetures/events/eventDetaled/EventDetailedPa
 import EventForm from "../../fetures/events/eventForm/EventForm";
 import Sandbox from "../../fetures/sandox/Sandbox";
 import ModalManager from "../common/modals/ModalManager";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const { key } = useLocation();
@@ -17,6 +18,7 @@ function App() {
   return (
     <>
       <ModalManager />
+      <ToastContainer position="bottom-right" hideProgressBar />
       <Route exact path="/" component={HomePage} />
       <Route
         path={"/(.+)"}
