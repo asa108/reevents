@@ -4,12 +4,16 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 import "react-toastify/dist/ReactToastify.min.css";
+import "react-calendar/dist/Calendar.css";
 import App from "./app/layout/App";
 import ScrollToTop from "./app/layout/ScrollToTop";
 import { configStore } from "./app/store/configStore";
 import reportWebVitals from "./reportWebVitals";
+import { loadEvents } from "./fetures/events/eventAction";
 
 const store = configStore();
+
+store.dispatch(loadEvents());
 
 ReactDOM.render(
   <Provider store={store}>
